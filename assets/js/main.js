@@ -1,21 +1,22 @@
+// Initial Place and Load More
 const placePokemonLeft = document.getElementById("place-pokemon");
 const buttonLoadMore = document.getElementById("buttonLoadMore");
 
-// For Card Pokemon
+// Initial Condition
 const initialPokemon = 9;
-const url = "https://pokeapi.co/api/v2/pokemon/";
-// For Big Card Right Pokemon
 let idInitialPokemon = 1;
-
 let conditionCardPokemon = 0;
 
+// url For Fetch
+const url = "https://pokeapi.co/api/v2/pokemon/";
+
+// Load Card Pokemon
 const initialLoadPokemon = async (banyakNya) => {
   for (let i = idInitialPokemon; i <= banyakNya; i++) {
     await fetchPokemon(i);
     idInitialPokemon = i;
     conditionCardPokemon = i;
     console.log(conditionCardPokemon);
-    // buttonLoadMore.setAttribute("onclick", `getinitPokeRight(${dataPokemon.id})`);
   }
   buttonLoadMore.setAttribute(
     "onclick",
@@ -24,6 +25,7 @@ const initialLoadPokemon = async (banyakNya) => {
   idInitialPokemon = idInitialPokemon + 1;
 };
 
+// Function Showing Pokemon
 function showingPokemon(dataPokemon) {
   const picture =
     dataPokemon.sprites.versions["generation-v"]["black-white"].animated
@@ -51,6 +53,7 @@ function showingPokemon(dataPokemon) {
   placePokemonLeft.appendChild(cardPokemon);
 }
 
+// Fetch data pokemon
 async function fetchPokemon(id) {
   const getPokemon = await fetch(url + id);
   getPokemon.json().then((data) => {
@@ -58,8 +61,7 @@ async function fetchPokemon(id) {
   });
 }
 
-initialLoadPokemon(initialPokemon);
-
+// initial Data Info Pokemon Right Side
 const getinitPokeRight = async (idInitialPokemon) => {
   const rightPlace = document.getElementById("right");
   rightPlace.scrollIntoView();
@@ -308,10 +310,8 @@ const getinitPokeRight = async (idInitialPokemon) => {
   });
 };
 
-getinitPokeRight(idInitialPokemon);
-
+// Condition Button Back To Top
 const buttonToTop = document.getElementById("moveTop");
-console.log(buttonToTop);
 function scrollFunction() {
   if (
     document.body.scrollTop > 500 ||
@@ -322,11 +322,17 @@ function scrollFunction() {
     buttonToTop.style.display = "none";
   }
 }
+// Move to Top
 window.onscroll = function () {
   scrollFunction();
 };
 
+// Function Go Top
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// Run First Function
+getinitPokeRight(idInitialPokemon);
+initialLoadPokemon(initialPokemon);

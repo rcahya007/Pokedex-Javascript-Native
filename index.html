@@ -4,42 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BoxIcons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>POKEDEX</title>
   </head>
   <body>
     <div class="container">
+      <!-- Start Place Pokemon -->
       <section class="left">
         <div class="logoPokemon">
           <img src="assets/img/Logo Pokemon.png" alt="" />
         </div>
-        <div class="place-pokemon" id="place-pokemon"></div>
+        <div class="place-pokemon" id="place-pokemon">
+          <!-- Place Card Pokemon Here -->
+        </div>
         <div class="load-more">
           <button id="buttonLoadMore">Load More</button>
         </div>
       </section>
+      <!-- End Place Pokemon -->
+      <!-- Start Place Info Pokemon -->
       <section class="right" id="right">
         <div class="container-pokemon-right">
           <div class="img-emblem">
             <div class="bigPokemon">
               <img src="assets/img/132.gif" alt="pokemon" id="bigPokemon" />
             </div>
-            <!-- <div class="emblem">
-              <button>SATU</button>
-              <button>DUA</button>
-            </div> -->
           </div>
           <div class="info-pokemon-right">
             <div class="id-pokemon">#xxx</div>
             <div class="name-pokemon">XXXXXXX</div>
             <div class="sub-name">xxxxxxx</div>
             <div class="type-right">
-              <!-- <button>Grass</button>
-              <button>Ground</button> -->
+              <!-- Type Pokemon Here -->
             </div>
             <div class="pokedex-info">
               <h3>POKEDEX ENTRY</h3>
@@ -114,7 +116,6 @@
                 <button id="buttonImgLvlTwo">
                   <img src="assets/img/132.gif" alt="img 2" id="pokeLvlTwo" />
                 </button>
-
                 <p>Lvl 36</p>
                 <button id="buttonImgLvlThree">
                   <img src="assets/img/132.gif" alt="img 3" id="pokeLvlThree" />
@@ -146,9 +147,11 @@
         </div>
       </section>
     </div>
+    <!-- Scroll Top -->
     <button onclick="topFunction()" id="moveTop">
       <i class="bx bxs-chevrons-up"></i>
     </button>
+    <!-- Js -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
